@@ -77,6 +77,15 @@ class AgentBase(ABC):
         """
         return list(self._memory)
 
+    @property
+    def memory_size(self) -> int:
+        """Return the number of items currently in the agent's memory.
+
+        Returns:
+            int: The count of memory entries.
+        """
+        return len(self._memory)
+
     def __call__(self, x: Optional[Any] = None) -> Any:
         """Make the agent callable, delegating to the `reply` method.
 
