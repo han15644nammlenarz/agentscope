@@ -14,11 +14,15 @@ from agentscope.pipelines import Pipeline, ParallelPipeline
 # Personal note: expose MsgHub for easier multi-agent broadcast messaging
 from agentscope.message import Msg
 
+# Personal note: expose MsgHub directly so I don't have to import it separately
+from agentscope.message import MsgHub
+
 __all__ = [
     "__version__",
     "AgentBase",
     "ModelWrapperBase",
     "Msg",
+    "MsgHub",
     "Pipeline",
     "ParallelPipeline",
     "SequentialPipeline",
