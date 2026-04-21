@@ -17,12 +17,21 @@ from agentscope.message import Msg
 # Personal note: expose MsgHub directly so I don't have to import it separately
 from agentscope.message import MsgHub
 
+# Personal note: expose msghub context manager alias for convenience
+# (msghub is the functional form used in most examples)
+try:
+    from agentscope.message import msghub
+    _has_msghub_func = True
+except ImportError:
+    _has_msghub_func = False
+
 __all__ = [
     "__version__",
     "AgentBase",
     "ModelWrapperBase",
     "Msg",
     "MsgHub",
+    "msghub",
     "Pipeline",
     "ParallelPipeline",
     "SequentialPipeline",
